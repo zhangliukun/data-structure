@@ -24,7 +24,13 @@ public class TestSortData {
 		//冒泡排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		PopSort.popSort(copyNum);
-		System.out.print("冒泡的结果为:");
+		System.out.print("冒泡排序的结果为:");
+		ShowResult.showArrays(copyNum);
+		
+		//选择排序
+		System.arraycopy(num, 0, copyNum, 0, num.length);
+		PopSort.popSort(copyNum);
+		System.out.print("选择排序的结果为:");
 		ShowResult.showArrays(copyNum);
 		
 		

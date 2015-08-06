@@ -1,5 +1,10 @@
 package sort;
 
+/**
+ * ц╟ещеепР
+ * @author Zale
+ *
+ */
 public class PopSort {
 	
 	public static void popSort(int[] num){
