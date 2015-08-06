@@ -10,11 +10,8 @@ public class MergeSort {
 			mergeSortDivide(num, start, middle, temp);
 			mergeSortDivide(num, middle+1, end, temp);
 			mergeList(num, start, middle, end, temp);
-			
 		}
-		
 	}
-	
 	
 	public static void mergeList(int[] num,int start,int middle,int end,int[] temp){
 		

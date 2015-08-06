@@ -30,7 +30,9 @@ public class TestSortData {
 		// int[] num = new int[]{74,79,26,3,33};
 
 		System.out.print("原数组为:");
+		
 		ShowResult.showArrays(num);
+		System.out.println();
 
 		int[] copyNum = new int[num.length];
 
@@ -73,7 +75,7 @@ public class TestSortData {
 		// 归并排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		int[] temp = new int[30];
-		MergeSort.mergeSortDivide(num, 0, num.length-1, temp);
+		MergeSort.mergeSortDivide(copyNum, 0, copyNum.length-1, temp);
 		System.out.print("归并排序的结果为:");
 		ShowResult.showArrays(copyNum);
 
