@@ -1,5 +1,12 @@
 package util;
 
+
+/**
+ * 
+ * @author Zale
+ *
+ */
+
 public class ShowResult {
 	
 	public static void showArrays(int[] num) {
