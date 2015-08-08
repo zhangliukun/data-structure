@@ -1,9 +1,10 @@
 package data;
 
-import java.util.Arrays;
 import java.util.Random;
 
+
 import sort.BinaryInsertSort;
+import sort.HeapSort;
 import sort.InsertSort;
 import sort.MergeSort;
 import sort.PopSort;
@@ -21,7 +22,7 @@ public class TestSortData {
 		 */
 
 		// 测试数据
-		int[] num = new int[30];
+		int[] num = new int[100000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = random.nextInt(100);
@@ -54,7 +55,7 @@ public class TestSortData {
 		// 冒泡排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		PopSort.popSort(copyNum);
+		//PopSort.popSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("冒泡排序的结果为:");
 		//ShowResult.showArrays(copyNum);
@@ -63,7 +64,7 @@ public class TestSortData {
 		// 选择排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		SelectSort.selectSort(copyNum);
+		//SelectSort.selectSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("选择排序的结果为:");
 		//ShowResult.showArrays(copyNum);
@@ -72,7 +73,7 @@ public class TestSortData {
 		// 插入排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		InsertSort.insertSrot(copyNum);
+		//InsertSort.insertSrot(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("插入排序的结果为:");
 		//ShowResult.showArrays(copyNum);
@@ -81,7 +82,7 @@ public class TestSortData {
 		// 二分插入排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		BinaryInsertSort.binaryInsertSort(copyNum);
+		//BinaryInsertSort.binaryInsertSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("二分插入排序的结果为:");
 		//ShowResult.showArrays(copyNum);
@@ -90,13 +91,25 @@ public class TestSortData {
 		// 归并排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		int[] temp = new int[30];
+		int[] temp = new int[100000];
+		startTime=System.currentTimeMillis();
 		MergeSort.mergeSortDivide(copyNum, 0, copyNum.length-1, temp);
 		endTime = System.currentTimeMillis();
 		System.out.print("归并排序的结果为:");
 		//ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
-
+		
+		//堆排序
+		System.arraycopy(num, 0, copyNum, 0, num.length);
+		System.out.print("堆排序的结果为:");
+		startTime=System.currentTimeMillis();
+		HeapSort.buildHeap(copyNum, (copyNum.length -1)/2, copyNum.length);
+		//ShowResult.showArrays(copyNum);
+		
+		HeapSort.deleteMinHead(copyNum,(num.length-2)/2, num.length);
+		endTime = System.currentTimeMillis();
+		System.out.println((endTime - startTime)+"ms");
+		
 	}
 
 }
