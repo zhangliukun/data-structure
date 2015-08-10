@@ -10,6 +10,7 @@ import sort.MergeSort;
 import sort.PopSort;
 import sort.QuickSortV1;
 import sort.SelectSort;
+import sort.ShellSort;
 import util.ShowResult;
 
 public class TestSortData {
@@ -22,7 +23,7 @@ public class TestSortData {
 		 */
 
 		// 测试数据
-		int[] num = new int[100000];
+		int[] num = new int[3000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = random.nextInt(100);
@@ -50,42 +51,42 @@ public class TestSortData {
 		long endTime = System.currentTimeMillis();
 		System.out.print("快速排序的结果为:");
 		System.out.println((endTime - startTime)+"ms");
-		//ShowResult.showArrays(copyNum);
+		ShowResult.showArrays(copyNum);
 
 		// 冒泡排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		//PopSort.popSort(copyNum);
+		PopSort.popSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("冒泡排序的结果为:");
-		//ShowResult.showArrays(copyNum);
+		ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
 
 		// 选择排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		//SelectSort.selectSort(copyNum);
+		SelectSort.selectSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("选择排序的结果为:");
-		//ShowResult.showArrays(copyNum);
+		ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
 
 		// 插入排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		//InsertSort.insertSrot(copyNum);
+		InsertSort.insertSrot(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("插入排序的结果为:");
-		//ShowResult.showArrays(copyNum);
+		ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
 
 		// 二分插入排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime=System.currentTimeMillis();
-		//BinaryInsertSort.binaryInsertSort(copyNum);
+		BinaryInsertSort.binaryInsertSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("二分插入排序的结果为:");
-		//ShowResult.showArrays(copyNum);
+		ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
 
 		// 归并排序
@@ -104,10 +105,18 @@ public class TestSortData {
 		System.out.print("堆排序的结果为:");
 		startTime=System.currentTimeMillis();
 		HeapSort.buildHeap(copyNum, (copyNum.length -1)/2, copyNum.length);
-		//ShowResult.showArrays(copyNum);
-		
+		ShowResult.showArrays(copyNum);
 		HeapSort.deleteMinHead(copyNum,(num.length-2)/2, num.length);
 		endTime = System.currentTimeMillis();
+		System.out.println((endTime - startTime)+"ms");
+		
+		//希尔排序
+		System.arraycopy(num, 0, copyNum, 0, num.length);
+		startTime=System.currentTimeMillis();
+		ShellSort.shellSort(copyNum);
+		endTime = System.currentTimeMillis();
+		System.out.print("希尔排序的结果为:");
+		ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime)+"ms");
 		
 	}
