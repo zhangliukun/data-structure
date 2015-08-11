@@ -2,6 +2,8 @@ package sort;
 
 public class ShellSort {
 
+	
+	//Ì«ÂıÁË
 	public static void shellSort(int[] num) {
 
 		int b = num.length / 3;
