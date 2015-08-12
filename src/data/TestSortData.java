@@ -22,7 +22,7 @@ public class TestSortData {
 		 */
 
 		// ²âÊÔÊı¾İ
-		int[] num = new int[100000];
+		int[] num = new int[1000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = random.nextInt(100000);
@@ -112,7 +112,7 @@ public class TestSortData {
 		// Ï£¶ûÅÅĞò
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime = System.currentTimeMillis();
-		//ShellSort.shellSort(copyNum);
+		ShellSort.shellSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("Ï£¶ûÅÅĞòµÄ½á¹ûÎª:");
 		//ShowResult.showArrays(copyNum);
