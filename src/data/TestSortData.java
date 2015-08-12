@@ -22,10 +22,10 @@ public class TestSortData {
 		 */
 
 		// 测试数据
-		int[] num = new int[1000];
+		int[] num = new int[1000000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
-			num[i] = random.nextInt(100000);
+			num[i] = random.nextInt(1000);
 		}
 
 		// int[] num = new int[]{74,79,26,3,33};
@@ -91,7 +91,7 @@ public class TestSortData {
 		// 归并排序
 		System.arraycopy(num, 0, copyNum, 0, num.length);
 		startTime = System.currentTimeMillis();
-		int[] temp = new int[500000];
+		int[] temp = new int[1000000];
 		startTime = System.currentTimeMillis();
 		MergeSort.mergeSortDivide(copyNum, 0, copyNum.length - 1, temp);
 		endTime = System.currentTimeMillis();
@@ -115,15 +115,6 @@ public class TestSortData {
 		ShellSort.shellSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("希尔排序的结果为:");
-		//ShowResult.showArrays(copyNum);
-		System.out.println((endTime - startTime) + "ms");
-
-		// 希尔排序
-		System.arraycopy(num, 0, copyNum, 0, num.length);
-		startTime = System.currentTimeMillis();
-		ShellSort.shellSrot2(copyNum);
-		endTime = System.currentTimeMillis();
-		System.out.print("希尔排序2的结果为:");
 		//ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime) + "ms");
 
