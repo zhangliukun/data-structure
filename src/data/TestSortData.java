@@ -3,6 +3,7 @@ package data;
 import java.util.Random;
 
 import sort.BinaryInsertSort;
+import sort.CountingSort;
 import sort.HeapSort;
 import sort.InsertSort;
 import sort.MergeSort;
@@ -36,6 +37,8 @@ public class TestSortData {
 		System.out.println();
 
 		int[] copyNum = new int[num.length];
+		
+		int[] cacheNum = new int[num.length];
 
 		/**
 		 * *****************************************算法区域************************
@@ -115,6 +118,15 @@ public class TestSortData {
 		ShellSort.shellSort(copyNum);
 		endTime = System.currentTimeMillis();
 		System.out.print("希尔排序的结果为:");
+		//ShowResult.showArrays(copyNum);
+		System.out.println((endTime - startTime) + "ms");
+		
+		//计数排序
+		System.arraycopy(num, 0, copyNum, 0, num.length);
+		startTime = System.currentTimeMillis();
+		CountingSort.countSort(copyNum, cacheNum, 1000);
+		endTime = System.currentTimeMillis();
+		System.out.print("计数排序的结果为:");
 		//ShowResult.showArrays(copyNum);
 		System.out.println((endTime - startTime) + "ms");
 
