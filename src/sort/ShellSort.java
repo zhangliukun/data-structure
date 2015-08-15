@@ -10,13 +10,6 @@ public class ShellSort {
 			
 			for(int i=gap;i<num.length;i++){
 				int temp = num[i];
-//				for(j=i-gap;j>=0;j = j-gap){
-//					if (temp < num[j]) {
-//						num[j+gap] = num[j];
-//					}else{
-//						break;
-//					}
-//				}
 				for(j=i-gap;j>=0&&temp<num[j];j = j-gap){
 					num[j+gap] = num[j];
 				}
