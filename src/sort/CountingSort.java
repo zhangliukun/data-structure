@@ -4,7 +4,7 @@ public class CountingSort {
 
 	public static void countSort(int[] a,int[] b,int k){
 		
-		int[] c = new int[k];
+		int[] c = new int[k+1];
 		
 		for(int i=0;i<c.length;i++){
 			c[i] = 0;
@@ -19,7 +19,7 @@ public class CountingSort {
 		}
 		
 		for(int i = a.length -1;i>=0;i--){
-			b[c[a[i]]] = a[i];
+			b[c[a[i]]-1] = a[i];
 			c[a[i]] --;
 		}
 		

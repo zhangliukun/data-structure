@@ -23,7 +23,7 @@ public class TestSortData {
 		 */
 
 		// 测试数据
-		int[] num = new int[1000000];
+		int[] num = new int[1000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = random.nextInt(1000);
@@ -127,8 +127,10 @@ public class TestSortData {
 		CountingSort.countSort(copyNum, cacheNum, 1000);
 		endTime = System.currentTimeMillis();
 		System.out.print("计数排序的结果为:");
-		//ShowResult.showArrays(copyNum);
+		//ShowResult.showArrays(cacheNum);
 		System.out.println((endTime - startTime) + "ms");
+		
+		
 
 	}
 
