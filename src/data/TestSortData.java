@@ -9,6 +9,7 @@ import sort.InsertSort;
 import sort.MergeSort;
 import sort.PopSort;
 import sort.QuickSortV1;
+import sort.RadixSort;
 import sort.SelectSort;
 import sort.ShellSort;
 import util.ShowResult;
@@ -23,7 +24,7 @@ public class TestSortData {
 		 */
 
 		// 测试数据
-		int[] num = new int[1000];
+		int[] num = new int[10000];
 		Random random = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = random.nextInt(1000);
@@ -130,7 +131,14 @@ public class TestSortData {
 		//ShowResult.showArrays(cacheNum);
 		System.out.println((endTime - startTime) + "ms");
 		
-		
+		//基数排序
+		System.arraycopy(num, 0, copyNum, 0, num.length);
+		startTime = System.currentTimeMillis();
+		RadixSort.radixSort(copyNum);
+		endTime = System.currentTimeMillis();
+		System.out.print("基数排序的结果为:");
+		//ShowResult.showArrays(copyNum);
+		System.out.println((endTime - startTime) + "ms");
 
 	}
 
