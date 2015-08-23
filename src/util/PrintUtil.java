@@ -7,7 +7,7 @@ package util;
  *
  */
 
-public class ShowResult {
+public class PrintUtil {
 	
 	public static void showArrays(int[] num) {
 		for (int i = 0; i < num.length; i++) {

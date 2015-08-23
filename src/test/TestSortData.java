@@ -1,4 +1,4 @@
-package data;
+package test;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import sort.PopSort;
 import sort.QuickSortV1;
 import sort.SelectSort;
 import sort.ShellSort;
-import util.ShowResult;
+import util.PrintUtil;
 
 public class TestSortData {
 

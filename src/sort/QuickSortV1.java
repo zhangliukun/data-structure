@@ -1,6 +1,6 @@
 package sort;
 
-import util.ShowResult;
+import util.PrintUtil;
 
 /**
  * ²å¿Õ·¨¿ìËÙÅÅĞò
