@@ -1,5 +1,6 @@
 package util;
 
+import tree.BinaryTree.TreeNode;
 
 /**
  * π§æﬂ¿‡
@@ -15,5 +16,5 @@ public class PrintUtil {
 		}
 		System.out.println();
 	}
-
+	
 }
