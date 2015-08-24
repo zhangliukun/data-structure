@@ -1,9 +1,13 @@
 package tree;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.ArrayBlockingQueue;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import tree.BinaryTree.TreeNode;
 
@@ -77,6 +81,28 @@ public class BinaryTree {
 	}
 
 	/**
+	 * 先序遍历（非递归）
+	 * 
+	 * @param node
+	 */
+	public void stackPreOrder(TreeNode node) {
+		if (node == null) {
+			return;
+		}
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		while (node != null || !stack.isEmpty()) {
+			while (node != null) {
+				System.out.print(node.data + " ");
+				stack.push(node);
+				node = node.leftTree;
+			}
+			node = stack.pop();
+			node = node.rightTree;
+
+		}
+	}
+
+	/**
 	 * 中序遍历（递归）
 	 * 
 	 * @param node
@@ -88,6 +114,30 @@ public class BinaryTree {
 		inOrder(node.leftTree);
 		System.out.print(node.data + " ");
 		inOrder(node.rightTree);
+	}
+
+	/**
+	 * 中序遍历（非递归）
+	 * 
+	 * @param node
+	 */
+	public void stackInOrder(TreeNode node) {
+		if (node == null) {
+			return;
+		}
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		while (node != null || !stack.isEmpty()) {
+			while (node != null) {
+				stack.push(node);
+				node = node.leftTree;
+			}
+			TreeNode subNode = stack.pop();
+			System.out.print(subNode.data + " ");
+			if (subNode.rightTree != null) {
+				node = subNode.rightTree;
+			}
+
+		}
 	}
 
 	/**
@@ -105,54 +155,43 @@ public class BinaryTree {
 	}
 
 	/**
-	 * 先序遍历（非递归）
+	 * 后序遍历（非递归）
 	 * 
 	 * @param node
 	 */
-//	public void stackPreOrder(TreeNode node) {
-//		Stack<TreeNode> stack = new Stack<TreeNode>();
-//		stack.push(node);
-//		while (stack.size() != 0) {
-//			TreeNode subNode = stack.pop();
-//			System.out.print(subNode.data + " ");
-//			if (subNode.rightTree != null) {
-//				stack.push(subNode.rightTree);
-//			}
-//			if (subNode.leftTree != null) {
-//				stack.push(subNode.leftTree);
-//			}
-//		}
-//	}
-
-//代码不通用废弃	
-//	public void stackInOrder(TreeNode node){
-//		Stack<TreeNode> stack = new Stack<TreeNode>();
-//		stack.push(node);
-//		while(stack.size()!=0){
-//			TreeNode subNode = stack.pop();
-//			if (subNode.rightTree!=null) {
-//				stack.push(subNode.rightTree);
-//			}
-//			if (subNode.leftTree!=null) {
-//				stack.push(subNode.leftTree);
-//			}
-//		}
-//	}
-	
-	public void stackPreOrder(TreeNode node){
+	public void stackPostOrder(TreeNode node) {
+		if (node == null) {
+			return;
+		}
+		
+		Map<TreeNode, Boolean> isVisited = new HashMap<TreeNode,Boolean>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
-		while(node!=null||!stack.isEmpty()){
-			while(node!=null){
-				System.out.print(node.data+" ");
-				stack.push(node);
-				node = node.leftTree;
+		stack.push(node);
+		while (!stack.isEmpty()) {
+			TreeNode subNode = stack.peek();
+			while (subNode != null) {
+				if (!isVisited.containsKey(subNode.leftTree)&&subNode.leftTree != null) {
+					stack.push(subNode.leftTree);
+					subNode = subNode.leftTree;
+				}else {
+					break;
+				}
 			}
-			node = stack.pop();
-			node = node.rightTree;
+			if (!isVisited.containsKey(subNode.rightTree)&&subNode.rightTree != null) {
+				stack.push(subNode.rightTree);
+				subNode = subNode.rightTree;
+				continue;
+			}
 			
+			subNode = stack.pop();
+			isVisited.put(subNode, true);
+			System.out.print(subNode.data +" ");
+			
+			
+			
+
 		}
 	}
-	
 
 	/**
 	 * 层序遍历（队列）

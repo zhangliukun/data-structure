@@ -19,13 +19,16 @@ public class TestBinaryTree {
 		//System.out.print("二叉树结构为:");
 		System.out.print("先序遍历的结果:");
 		binaryTree.preOrder(binaryTree.rootNode);
-		System.out.print("\n中序遍历的结果:");
-		binaryTree.inOrder(binaryTree.rootNode);
-		System.out.print("\n后序遍历的结果:");
-		binaryTree.postOrder(binaryTree.rootNode);
-		
 		System.out.print("\n非递归先序遍历的结果:");
 		binaryTree.stackPreOrder(binaryTree.rootNode);
+		System.out.print("\n中序遍历的结果:");
+		binaryTree.inOrder(binaryTree.rootNode);
+		System.out.print("\n非递归中序遍历的结果:");
+		binaryTree.stackInOrder(binaryTree.rootNode);
+		System.out.print("\n后序遍历的结果:");
+		binaryTree.postOrder(binaryTree.rootNode);
+		System.out.print("\n非递归后序遍历的结果:");
+		binaryTree.stackPostOrder(binaryTree.rootNode);
 		System.out.print("\n层序遍历的结果:");
 		binaryTree.levelOrder(binaryTree.rootNode);
 		
