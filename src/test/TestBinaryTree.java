@@ -2,7 +2,7 @@ package test;
 
 import java.util.Random;
 
-import tree.BinaryTree;
+import tree.BinarySortTree;
 import util.DataUtil;
 import util.PrintUtil;
 
@@ -13,7 +13,7 @@ public class TestBinaryTree {
 		System.out.print("原数组为的结果:");
 		PrintUtil.showArrays(num);
 		
-		BinaryTree binaryTree = new BinaryTree();
+		BinarySortTree binaryTree = new BinarySortTree();
 		binaryTree.createBinaryTree(num);
 		
 		//System.out.print("二叉树结构为:");

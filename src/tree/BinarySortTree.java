@@ -9,12 +9,15 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-import tree.BinaryTree.TreeNode;
+import tree.BinarySortTree.TreeNode;
 
-public class BinaryTree {
+public class BinarySortTree {
 
 	private int size;
 	public TreeNode rootNode;
+	
+	private TreeNode firstNode;
+	private TreeNode lastNode;
 
 	public class TreeNode {
 		public int data;
@@ -186,10 +189,6 @@ public class BinaryTree {
 			subNode = stack.pop();
 			isVisited.put(subNode, true);
 			System.out.print(subNode.data +" ");
-			
-			
-			
-
 		}
 	}
 
@@ -214,6 +213,18 @@ public class BinaryTree {
 			}
 		}
 	}
+	
+//	public void convertToDoubleList(TreeNode node){
+//		
+//		if (node == null) {
+//			return;
+//		}
+//		
+//		convertToDoubleList(node.leftTree);
+//		firstNode = node;
+//		convertToDoubleList(node.rightTree);
+//	}
+//	
 
 	/**
 	 * 得到二叉树的深度

@@ -1,6 +1,6 @@
 package util;
 
-import tree.BinaryTree.TreeNode;
+import tree.BinarySortTree.TreeNode;
 
 /**
  * π§æﬂ¿‡
