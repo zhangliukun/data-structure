@@ -9,7 +9,7 @@ import util.PrintUtil;
 public class TestBinaryTree {
 	
 	public static void main(String[] args){
-		int[] num = DataUtil.CreateTestData(6);
+		int[] num = DataUtil.CreateTestData(5);
 		System.out.print("原数组为的结果:");
 		PrintUtil.showArrays(num);
 		
@@ -17,7 +17,9 @@ public class TestBinaryTree {
 		binaryTree.createBinaryTree(num);
 		
 		//System.out.print("二叉树结构为:");
-		System.out.print("先序遍历的结果:");
+		System.out.println("\n二叉树的节点个数为");
+		System.out.println(binaryTree.getNodeNum(binaryTree.rootNode));
+		System.out.print("\n先序遍历的结果:");
 		binaryTree.preOrder(binaryTree.rootNode);
 		System.out.print("\n非递归先序遍历的结果:");
 		binaryTree.stackPreOrder(binaryTree.rootNode);
