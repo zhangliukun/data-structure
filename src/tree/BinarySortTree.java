@@ -55,6 +55,21 @@ public class BinarySortTree {
 			}
 		}
 	}
+	
+	/**
+	 * 获取到节点的数量
+	 * @param node
+	 * @return
+	 */
+	public int getNodeNum(TreeNode node){
+		if (node == null) {
+			return 0;
+		}
+		int left = getNodeNum(node.leftTree);
+		int right = getNodeNum(node.rightTree);
+		return left + right+1;
+		
+	}
 
 	/**
 	 * 通过数组创建二叉树
