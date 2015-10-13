@@ -15,6 +15,14 @@ public class InsertSort {
 				}
 			}
 		}
+		
+//		for(int i=1;i<num.length;i++){
+//			for(int j-i-1;j)
+//		}
+	}
+	
+	public static void insertSortV2(int[] num){
+		
 	}
 
 }
