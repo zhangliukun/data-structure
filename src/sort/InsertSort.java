@@ -22,7 +22,14 @@ public class InsertSort {
 	}
 	
 	public static void insertSortV2(int[] num){
-		
+		int j;
+		for(int i=1;i<num.length;i++){
+			int temp  = num[i];
+			for(j=i-1;j>=0&&num[j]<num[i];j--){
+				num[j+1] = num[j];
+			}
+			num[j+1] = temp;
+		}
 	}
 
 }
