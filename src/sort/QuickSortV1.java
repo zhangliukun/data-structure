@@ -3,7 +3,7 @@ package sort;
 import util.PrintUtil;
 
 /**
- * ²å¿Õ·¨¿ìËÙÅÅĞò
+ * æ’ç©ºæ³•å¿«é€Ÿæ’åº
  * @author Zale
  *
  */
@@ -23,15 +23,15 @@ public class QuickSortV1 {
 		int i = start;
 		int j = end;
 		while(i < j){
-			//´Ó ÓÒ±ß¿ªÊ¼Ïò×ó±ß²éÕÒ
-			while(num[j] > baseValue && i<j){
+			//ä» å³è¾¹å¼€å§‹å‘å·¦è¾¹æŸ¥æ‰¾
+			while(num[j] >= baseValue && i<j){
 				j--;
 			}
 			if (i<j) {
 				num[i] = num[j];
 				i++;
 			}
-			while(num[i] < baseValue && i<j){
+			while(num[i] =< baseValue && i<j){
 				i++;
 			}
 			if (i<j) {
